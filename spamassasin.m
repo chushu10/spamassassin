@@ -49,7 +49,7 @@ iter_array      = [2500, 1400, 250, 500, 1400];
 %  After counted the frequency of words occurred in all of our emails, 
 %  then we could build our own vocabulary list.
 
-% Set the least frequency
+% % Set the least frequency
 % min_frequency = 100;
 
 % % Leaves only words whose frequency is greater or equal than min_frequency
@@ -61,12 +61,12 @@ iter_array      = [2500, 1400, 250, 500, 1400];
 %     most_frequent_words{i, 2} = i;
 % end
 
-% Save the words just like the file vocab.txt in Machine Learning course ex6
-fid = fopen('vocab.txt', 'wt');
-for i = 1:length(most_frequent_words)
-    fprintf(fid, '%d\t%s\n', most_frequent_words{i, 2}, most_frequent_words{i, 1});
-end
-fclose(fid);
+% % Save the words just like the file vocab.txt in Machine Learning course ex6
+% fid = fopen('vocab.txt', 'wt');
+% for i = 1:length(most_frequent_words)
+%     fprintf(fid, '%d\t%s\n', most_frequent_words{i, 2}, most_frequent_words{i, 1});
+% end
+% fclose(fid);
 
 
 
