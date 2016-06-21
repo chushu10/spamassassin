@@ -8,7 +8,7 @@ directory_array = {"./spamassasin-dataset/easy_ham/",
                    "./spamassasin-dataset/spam/", 
                    "./spamassasin-dataset/spam_2/"};
 iter_array      = [2500, 1400, 250, 500, 1400];
-% for i = 2:5
+% for i = 1:5
 %     preProcess(directory_array{i}, iter_array(i));
 % end
 
@@ -42,4 +42,5 @@ for i = 1:5
            fflush(stdout);
         end
     end
+    fprintf(' Done! \n\n');
 end

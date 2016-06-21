@@ -23,3 +23,6 @@ for i = 1:length(word_array)
         frequency_list(current) = frequency_list(current) + 1;
     end
 end
+
+% Close the file, otherwise when processed too many files Octave will crash
+fclose(file_path);
