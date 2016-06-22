@@ -1,4 +1,4 @@
-# SPAMASSASIN
+# SPAMASSASSIN
 
 This is my first spam classifier using machine learning technology.
 
