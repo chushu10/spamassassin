@@ -14,22 +14,15 @@ y_rand = zeros(s, 1);
 X_left = zeros(m - s, n);
 y_left = zeros(m - s, 1);
 
-% Randomly pick s numbers from m numbers
-sample = randperm(m, s);
+% Randomly divide example indexes into two
+rand_num = randperm(m);
+sample_rand = rand_num(1:s);
+sample_left = rand_num(s + 1:m);
 
 % Pick X_rand and y_rand
-for i = 1:s
-	X_rand(i, :) = X(sample(i), :);
-	y_rand(i) = y(sample(i));
-end
+X_rand = X(sample_rand, :);
+y_rand = y(sample_rand);
 
 % Pick X_left and y_left
-iterator = 1;
-for i = 1:m
-    if ~isempty(find(sample == i))
-        continue;
-    end
-    X_left(iterator, :) = X(i, :);
-    y_left(iterator) = y(i, :);
-    iterator = iterator + 1;
-end
+X_left = X(sample_left, :);
+y_left = y(sample_left);

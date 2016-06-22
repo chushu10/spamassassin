@@ -131,9 +131,14 @@ n = 2248;
 %      2) CV set (830 vs 379)
 %      3) Test set (831 vs 379)
 
-% % Load dataset
-% % We will have X and y in our workspace
-% load('dataset.mat');
+% Load dataset
+% We will have X and y in our workspace
+% Becuase our dataset is large, this will take much time
+% yes = yes_or_no('Loading data will take a few minutes, are you sure?');
+% if yes == 1
+%     load('dataset.mat');
+% end
+% fprintf('Loading complete.\n');
 
 % % Divide proportion
 % benign = [2489, 830, 831];
@@ -162,4 +167,9 @@ n = 2248;
 % y_test = [y_rand_benign; y_rand_spam];
 % save('testset.mat', 'X_test', 'y_test');
 
-%% =============== Part 5: SVM Training =========================
+% =============== Part 5: SVM Training =========================
+% We have training set, cv set, test set, now begin using libsvm
+% to tain our own linear model!
+
+% % Add libsvm path
+% addpath('./libsvm-3.21/matlab');
