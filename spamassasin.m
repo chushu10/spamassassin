@@ -171,5 +171,40 @@ n = 2248;
 % We have training set, cv set, test set, now begin using libsvm
 % to tain our own linear model!
 
+% % Load training set
+% % We will have X_train and y_tain in our workspace
+% load('trainset.mat');
+
+% % We will have X_cv and y_cv in our workspace
+% load('cvset.mat');
+
 % % Add libsvm path
 % addpath('./libsvm-3.21/matlab');
+
+% % Start training
+% model = svmtrain(y_train, X_train);
+
+% % Predict using CV set
+% [predicted_label, accuracy, decision_values] = svmpredict(y_cv, X_cv, model);
+
+% =============== Part 6: Try Your Own Emails =========================
+%  Now that you've trained the spam classifier, you can use it on your own
+%  emails! In the starter code, we have included spamSample1.txt,
+%  spamSample2.txt, emailSample1.txt and emailSample2.txt as examples. 
+%  The following code reads in one of these emails and then uses your 
+%  learned SVM classifier to determine whether the email is Spam or 
+%  Not Spam
+
+% Set the file to be read in (change this to spamSample2.txt,
+% emailSample1.txt or emailSample2.txt to see different predictions on
+% different emails types). Try your own emails as well!
+filename = './spamassasin/spamassasin-dataset/misclassified-non-spam/00529.0c8a07bb7b14576063ba0c1c4079e209';
+
+% Read and predict
+file_contents = readFile(filename);
+word_indices  = processEmail(file_contents);
+x             = emailFeatures(word_indices);
+[predicted_label, accuracy, decision_values] = svmpredict(0, x', model);
+
+fprintf('\nProcessed %s\n\nSpam Classification: %d\n', filename, predicted_label);
+fprintf('(1 indicates spam, 0 indicates not spam)\n\n');
