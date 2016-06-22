@@ -119,7 +119,7 @@ n = 2248;
 % % Spam exmaples from 4151 to 6046
 % save ('dataset.mat', 'X', 'y');
 
-%% =============== Part 3: Divide Dataset =========================
+%% =============== Part 4: Divide Dataset =========================
 %  Randomly devide dataset into three parts:
 %      1) A trainning set (60% = 3627).
 %      2) A cross validation set (20% = 1209).
@@ -161,3 +161,5 @@ n = 2248;
 % X_test = [X_rand_benign; X_rand_spam];
 % y_test = [y_rand_benign; y_rand_spam];
 % save('testset.mat', 'X_test', 'y_test');
+
+%% =============== Part 5: SVM Training =========================
