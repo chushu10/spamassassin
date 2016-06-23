@@ -2,11 +2,11 @@
 %  Before getting into details of training data, we first pre process 
 %  the email to make our following steps easiler.
 %
-directory_array = {'./spamassasin-dataset/easy_ham/', 
-                   './spamassasin-dataset/easy_ham_2/', 
-                   './spamassasin-dataset/hard_ham/', 
-                   './spamassasin-dataset/spam/', 
-                   './spamassasin-dataset/spam_2/'};
+directory_array = {'./spamassassin-dataset/easy_ham/', 
+                   './spamassassin-dataset/easy_ham_2/', 
+                   './spamassassin-dataset/hard_ham/', 
+                   './spamassassin-dataset/spam/', 
+                   './spamassassin-dataset/spam_2/'};
 iter_array      = [2500, 1400, 250, 500, 1400];
 example_cat     = [0   , 0   , 0  , 1  , 1];
 
@@ -198,7 +198,7 @@ n = 2248;
 % Set the file to be read in (change this to spamSample2.txt,
 % emailSample1.txt or emailSample2.txt to see different predictions on
 % different emails types). Try your own emails as well!
-filename = './spamassasin/spamassasin-dataset/misclassified-non-spam/00529.0c8a07bb7b14576063ba0c1c4079e209';
+filename = './spamassassin/spamassassin-dataset/misclassified-non-spam/00529.0c8a07bb7b14576063ba0c1c4079e209';
 
 % Read and predict
 file_contents = readFile(filename);
