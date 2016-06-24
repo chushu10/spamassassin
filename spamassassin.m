@@ -131,9 +131,9 @@ save ('dataset.mat', 'X', 'y');
 %      2) CV set (830 vs 379)
 %      3) Test set (831 vs 379)
 
-Load dataset
-We will have X and y in our workspace
-Becuase our dataset is large, this will take much time
+% Load dataset
+% We will have X and y in our workspace
+% Becuase our dataset is large, this will take much time
 yes = yes_or_no('Loading data will take a few minutes, are you sure?');
 if yes == 1
     load('dataset.mat');
