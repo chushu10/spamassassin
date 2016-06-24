@@ -38,7 +38,7 @@ for i = 1:5
         if fid == -1
             continue;
         end
-        [word_list frequency_list] = wordFrequency(file_path, word_list, frequency_list);
+        [word_list, frequency_list] = wordFrequency(file_path, word_list, frequency_list);
 
         fprintf('.');
         dots = dots + 1;
@@ -147,22 +147,22 @@ name   = {'trainset.mat', 'cvset.mat', 'testset.mat'};
 
 % Divide dataset into three parts
 % Taining set
-[X_rand_benign y_rand_benign X_left_benign y_left_benign] = divideExample(X(1:4150, :), y(1:4150), 2489);
-[X_rand_spam y_rand_spam X_left_spam y_left_spam] = divideExample(X(4151:6046, :), y(4151:6046), 1138);
+[X_rand_benign, y_rand_benign, X_left_benign, y_left_benign] = divideExample(X(1:4150, :), y(1:4150), 2489);
+[X_rand_spam, y_rand_spam, X_left_spam, y_left_spam] = divideExample(X(4151:6046, :), y(4151:6046), 1138);
 X_train = [X_rand_benign; X_rand_spam];
 y_train = [y_rand_benign; y_rand_spam];
 save('trainset.mat', 'X_train', 'y_train');
 
 % Cross validation set
-[X_rand_benign y_rand_benign X_left_benign y_left_benign] = divideExample(X_left_benign, y_left_benign, 830);
-[X_rand_spam y_rand_spam X_left_spam y_left_spam] = divideExample(X_left_spam, y_left_spam, 379);
+[X_rand_benign, y_rand_benign, X_left_benign, y_left_benign] = divideExample(X_left_benign, y_left_benign, 830);
+[X_rand_spam, y_rand_spam, X_left_spam, y_left_spam] = divideExample(X_left_spam, y_left_spam, 379);
 X_cv = [X_rand_benign; X_rand_spam];
 y_cv = [y_rand_benign; y_rand_spam];
 save('cvset.mat', 'X_cv', 'y_cv');
 
 % Test set
-[X_rand_benign y_rand_benign X_left_benign y_left_benign] = divideExample(X_left_benign, y_left_benign, 831);
-[X_rand_spam y_rand_spam X_left_spam y_left_spam] = divideExample(X_left_spam, y_left_spam, 379);
+[X_rand_benign, y_rand_benign, X_left_benign, y_left_benign] = divideExample(X_left_benign, y_left_benign, 831);
+[X_rand_spam, y_rand_spam, X_left_spam, y_left_spam] = divideExample(X_left_spam, y_left_spam, 379);
 X_test = [X_rand_benign; X_rand_spam];
 y_test = [y_rand_benign; y_rand_spam];
 save('testset.mat', 'X_test', 'y_test');

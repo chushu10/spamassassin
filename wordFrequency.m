@@ -1,4 +1,4 @@
-function [word_list frequency_list] = wordFrequency(file_path, word_list, frequency_list)
+function [word_list, frequency_list] = wordFrequency(file_path, word_list, frequency_list)
 % wordFrequency funtions calculate the words occurred in one file,
 % it take three arguments:
 %     file_path:       the path to the file to be dealt with

@@ -1,4 +1,4 @@
-function [X_rand y_rand X_left y_left] = divideExample(X, y, s)
+function [X_rand, y_rand, X_left, y_left] = divideExample(X, y, s)
 % divideExample randomly select s examples from X to form X_rand
 %                                      and from y to form y_rand
 % And also return the examples left which is X_left and y_left
